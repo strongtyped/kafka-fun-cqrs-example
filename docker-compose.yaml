@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  fast-data:
+      image: landoop/fast-data-dev:cp3.1.2
+      restart: always
+      environment:
+        ADV_HOST: 127.0.0.1
+      ports:
+        - "2181:2181" #zookeeper
+        - "3030:3030" #kafka development env
+        - "8081:8081" #schema registry
+        - "8082:8082" #kafka rest proxy
+        - "8083:8083" #kafka connect distributed
+        - "9092:9092" #kafka brooker
+
